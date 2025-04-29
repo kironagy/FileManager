@@ -1,0 +1,65 @@
+<?php
+
+return [
+    'title' => 'Cloudify',
+    'setting' => [
+        'title' => 'API Settings',
+        'description' => 'Configure API settings such as domain blacklisting, access permissions, and rate limits.',
+    ],
+    'api_key' => [
+        'title' => 'API Keys',
+        'token' => 'Token',
+        'type' => 'Type',
+        'type_helper' => 'Ensure that you use the appropriate API key for the intended purpose and never utilize the internal API in a client-side implementation.',
+        'special' => 'Give special permissions',
+        'special_helper' => 'Choosing this option will grant this API key special access to the Cloudify API, bypassing any established API limitations, such as rate limits, domain blacklists, and IP blacklists. This can be useful if you do not want your personal API keys to be restricted.',
+        'abilities' => 'Abilities',
+        'setting' => [
+            'title' => 'API Tokens',
+            'description' => 'Manage API keys.',
+            'blacklist_domain_failed_attempts' => 'Blacklist domain after how many failed attempts?',
+            'blacklist_domain_failed_attempts_placeholder' => 'Number of failed attempts for auto domain blacklisting.',
+            'blacklist_domain_failed_attempts_helper' => "If the specified number of failed activation and update download attempts are reached, the user's domain will be blacklisted automatically. (Note: This feature will only work if the Cloudify Cron is set up correctly and the option to 'add entries for failed activation and download attempts' is enabled.)",
+            'blacklist_ip_failed_attempts' => 'Blacklist IP after how many failed attempts?',
+            'blacklist_ip_failed_attempts_placeholder' => 'Number of failed attempts for auto IP blacklisting.',
+            'blacklist_ip_failed_attempts_helper' => "If the specified number of failed activation and update download attempts are reached, the user's IP will be automatically blacklisted. (Note: This will only work if the Cloudify Cron is set up correctly and entries for failed activation and download attempts are allowed.)",
+            'api_rate_limiting_method' => 'API Requests Rate Limiting Method',
+            'limit_method' => [
+                'ip_address' => 'Limit per IP address',
+                'api_token' => 'Limit per API token',
+            ],
+            'api_requests_rate_limit_per_hour' => 'API Requests Rate Limit (per hour)',
+            'api_requests_rate_limit_per_hour_placeholder' => 'Requests allowed per hour (leave empty for unlimited use)',
+            'api_requests_rate_limit_per_hour_helper' => 'API rate limiting can be implemented on a per-API key or per-IP address basis.',
+            'api_blacklisted_domains' => 'API Blacklisted Domains',
+            'api_blacklisted_domains_placeholder' => 'Domains to be blacklisted',
+            'api_blacklisted_domains_helper' => 'If specified, access to the Cloudify API will be blocked for these domains.',
+            'api_blacklisted_ips' => 'API Blacklisted IPs',
+            'api_blacklisted_ips_placeholder' => 'IPs to be blacklisted',
+            'api_blacklisted_ips_helper' => 'If supplied, access to the Cloudify API will be blocked for these IP addresses.',
+        ],
+    ],
+    'enums' => [
+        'api_key_type' => [
+            'internal' => 'Internal',
+            'external' => 'External',
+        ],
+        'external_ability' => [
+            'list_media_folders' => 'List Media Folders',
+            'create_media_folder' => 'Create Media Folder',
+            'edit_media_folder' => 'Edit Media Folder',
+            'trash_media_folder' => 'Trash Media Folder',
+            'delete_media_folder' => 'Delete Media Folder',
+            'list_media_files' => 'List Media Files',
+            'create_media_file' => 'Create Media File',
+            'edit_media_file' => 'Edit Media File',
+            'trash_media_file' => 'Trash Media File',
+            'delete_media_file' => 'Delete Media File',
+        ],
+    ],
+    'widget' => [
+        'total_media_folders' => 'Folders',
+        'total_media_files' => 'Files',
+        'total_media_sizes' => 'Media Sizes',
+    ],
+];
