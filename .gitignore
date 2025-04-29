@@ -24,8 +24,6 @@ __MACOSX
 /.phpintel
 /.php_cs.cache
 
-public/vendor/core
-
 _ide_helper.php
 yarn.lock
 bun.lockb
